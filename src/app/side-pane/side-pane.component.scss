@@ -1,0 +1,14 @@
+.accordion-button {
+    background-color: #fff;
+    color: black;
+}
+
+.accordion-button::after {
+    color: black;
+    transform: scaleX(-1);
+}
+
+// .accordion-button::selection {
+//     color: black;
+//     transform: scaleX(-1);
+// }
