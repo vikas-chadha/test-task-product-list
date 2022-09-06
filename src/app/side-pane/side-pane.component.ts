@@ -25,7 +25,9 @@ export class SidePaneComponent implements OnInit {
   constructor(private service: DataService) {}
   ngOnInit(): void {
     if (this.items.length > 0) {
+      // first product price as minimum price
       this.minPrice = this.items[0].price;
+      // filter catagories from product list from API
       this.items.map((row: any) => {
         if (row.price < this.minPrice) {
           this.minPrice = row.price;
@@ -45,13 +47,15 @@ export class SidePaneComponent implements OnInit {
       this.options.ceil = this.maxPrice;
     }
   }
-  updateSetting(event: any, type: string = '', item: string = '') {
+  updateFilter(event: any, type: string = '', item: string = '') {
     this.filter.maxPrice = this.maxPrice;
     this.filter.minPrice = this.minPrice;
     if (type == '') {
+      // if type event is slider 
       this.filter.maxPrice = event.highValue;
       this.filter.minPrice = event.value;
     } else {
+      //if type of event is checkbox
       if (event.target.checked) {
         this.filter.catagories.push(item);
       } else {

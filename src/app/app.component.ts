@@ -13,14 +13,14 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    // fetching data on site initialization
     this.http.get('https://fakestoreapi.com/products').subscribe(
       (res) => {
         this.currentItem = res;
         console.log(res);
       },
       (err) => {
-        console.log('error');
-        console.log(err);
+        console.error(err);
       },
       () => {
         console.log('Completed');

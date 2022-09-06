@@ -2,7 +2,10 @@
           <!-- <h3 class="heading">Bootstrap Product Grid</h3> -->
           <div class="container">
              <div class="row product">
-                 <div *ngFor="let item of dunebookList" class="col-md-4 ">
+               <div class="col-md-12" *ngIf="dunebookList.length == 0">
+                  <h3>No Products Found</h3>
+               </div>
+                 <div *ngFor="let item of dunebookList" class="col-md-3">
                    <div class="card">
                      <div class="ccc">
                        <p class="text-center"><img [src]="item.image" class="imw"></p> 
