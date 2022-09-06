@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SidePaneComponent } from './side-pane/side-pane.component';
 import { ProductsGridComponent } from './products-grid/products-grid.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { DataService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -16,15 +18,16 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     SidePaneComponent,
-    ProductsGridComponent
+    ProductsGridComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSliderModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DataService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
